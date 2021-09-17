@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Providers;
+
+use App\Events\ProductCreated;
+use App\Events\ProductDeleted;
+use App\Events\ProductUpdated;
+use App\Events\UserCreated;
+use App\Listeners\ProductCacheListener;
+use App\Listeners\UserCreatedListener;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
+
+class EventServiceProvider extends ServiceProvider
+{
+    /**
+     * The event listener mappings for the application.
+     *
+     * @var array
+     */
+    protected $listen = [
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+
+        ProductCreated::class => [
+            ProductCacheListener::class,
+        ],
+
+        ProductUpdated::class => [
+            ProductCacheListener::class
+        ],
+
+        ProductDeleted::class => [
+            ProductCacheListener::class
+        ],
+        
+        UserCreated::class => [
+            UserCreatedListener::class
+        ],
+    ];
+
+    /**
+     * Register any events for your application.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+}
