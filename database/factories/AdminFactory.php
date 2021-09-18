@@ -23,7 +23,7 @@ class AdminFactory extends Factory
     {
         return [
             'name' => $this->faker->userName(),
-            'email'=> $this->faker->unique()->safeEmail(),
+            'email'=> 'admin@gmail.com',
             'password'=> bcrypt('123456'),
         ];
     }
