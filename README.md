@@ -23,6 +23,7 @@ Smart Shop is an open source ecommerce platform management system using laravel.
 
 
 ## Contribution Guideline
+
 - Fork the ripo.
 - Clone the ripo locally.
 - Run `git checkout dev`
@@ -32,8 +33,14 @@ Smart Shop is an open source ecommerce platform management system using laravel.
 - Push to remote.
 - Merge to dev. 
 
+## Admin Route
 
+- http://localhost/smart-shop/public/admin/login
 
+## Admin Credentials
+
+- Email: `admin@gmail.com`
+- Password: `123456`
 
 ## License
 
