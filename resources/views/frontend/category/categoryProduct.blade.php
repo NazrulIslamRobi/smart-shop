@@ -144,7 +144,19 @@
 										
 										
 									</div>
-									<a href="#" class="item_add single-item hvr-outline-out button2">Add to cart</a>									
+									@auth()
+								
+							
+									<form action="{{route('add.cart')}}" method="post">
+									@csrf
+										
+									<input type="hidden" name="qty" id="" value="1">
+								
+									<input type="hidden" name="product_id" value="{{$product->id}}">
+									<button style="color:white; border:none;"  type="submit" class="item_add single-item hvr-outline-out button2">Add to cart</button>
+									</form>
+
+									@endauth									
 						</div>
 					</div>
 				</div>
