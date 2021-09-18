@@ -35,7 +35,7 @@ Smart Shop is an open source ecommerce platform management system using laravel.
 
 ## Admin Route
 
-- http://localhost/smart-shop/public/admin/login
+- localhost://8000/admin/login
 
 ## Admin Credentials
 
